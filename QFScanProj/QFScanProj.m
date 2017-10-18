@@ -7,13 +7,14 @@
 //
 
 #import "QFScanProj.h"
+#import "QFFilter.h"
 #import "QFCheckFunc.h"
 
 @implementation QFScanProj
 
 + (void)scanFunc:(NSString *)path finish:(void(^)(NSArray *allFunc))callback {
     NSMutableArray *mutableArr = [NSMutableArray new];
-    [QFFileHelper folderPath1:path filter:@".m" block:^(NSString *path) {
+    [QFFileHelper folderPath1:path filterArr:[[QFFilter share] sourceMFilter] block:^(NSString *path) {
         NSArray *arr = [[QFCheckFunc share] checkFunc:path];
         if (arr && arr.count > 0) {
             [mutableArr addObjectsFromArray:arr];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150351DC1F96D50F0090E86C /* QFFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 150351DB1F96D50F0090E86C /* QFFilter.m */; };
 		153B34BB1F958E950025267E /* QFCheckFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 153B34BA1F958E950025267E /* QFCheckFunc.m */; };
 		15FB4CE91F5FDA8D008638D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CE81F5FDA8D008638D5 /* main.m */; };
 		15FB4CEC1F5FDA8D008638D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CEB1F5FDA8D008638D5 /* AppDelegate.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150351DA1F96D50F0090E86C /* QFFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFFilter.h; sourceTree = "<group>"; };
+		150351DB1F96D50F0090E86C /* QFFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFFilter.m; sourceTree = "<group>"; };
 		153B34B91F958E940025267E /* QFCheckFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCheckFunc.h; sourceTree = "<group>"; };
 		153B34BA1F958E950025267E /* QFCheckFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCheckFunc.m; sourceTree = "<group>"; };
 		15FB4CE41F5FDA8D008638D5 /* QFScanProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QFScanProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +86,8 @@
 				15FB4CEE1F5FDA8D008638D5 /* ViewController.m */,
 				15FB4D321F5FDB23008638D5 /* QFScanProj.h */,
 				15FB4D331F5FDB23008638D5 /* QFScanProj.m */,
+				150351DA1F96D50F0090E86C /* QFFilter.h */,
+				150351DB1F96D50F0090E86C /* QFFilter.m */,
 				153B34B91F958E940025267E /* QFCheckFunc.h */,
 				153B34BA1F958E950025267E /* QFCheckFunc.m */,
 				15FB4CF01F5FDA8D008638D5 /* Main.storyboard */,
@@ -205,6 +210,7 @@
 				15FB4D3D1F5FDB78008638D5 /* NSDictionary+Extension.m in Sources */,
 				15FB4CEC1F5FDA8D008638D5 /* AppDelegate.m in Sources */,
 				15FB4CE91F5FDA8D008638D5 /* main.m in Sources */,
+				150351DC1F96D50F0090E86C /* QFFilter.m in Sources */,
 				15FB4D3E1F5FDB78008638D5 /* NSStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
