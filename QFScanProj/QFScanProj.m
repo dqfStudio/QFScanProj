@@ -453,5 +453,70 @@
     }
 }
 
++ (void)scanEnum:(NSString *)path finish:(void(^)(NSArray *allEnum))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
+        [QFFileHelper file:path block:^(NSString *lineStr) {
+            if (lineStr) {
+                NSString *newlineStr = [lineStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+                if (newlineStr.length < 7) return;
+                NSString *subString = [newlineStr substringToIndex:7];
+                if ([subString isEqualToString:@"typedef"]) {
+                    if ([newlineStr containsString:@"typedef"] && [newlineStr containsString:@"NS_ENUM"] && [newlineStr containsString:@"("] && [newlineStr containsString:@")"]) {
+                        NSArray *arr = newlineStr.componentsBySetString(@"()");
+                        if (arr && arr.count >= 2) {
+                            subString = arr[1];
+                            if (subString.length > 0) {
+                                arr = subString.componentsBySetString(@",");
+                                if (arr && arr.count >= 2) {
+                                    subString = arr[1];
+                                    if (subString && subString.length > 0) {
+                                        subString = [subString substringToIndex:1];
+                                        if (subString && ![subString isEqualToString:@"T"]) {
+                                            [mutableArr addObject:lineStr];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }];
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
+
++ (void)scanDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
+        [QFFileHelper file:path block:^(NSString *lineStr) {
+            if (lineStr) {
+                NSString *newlineStr = [lineStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+                if (newlineStr.length < 8) return;
+                NSString *subString = [newlineStr substringToIndex:7];
+                if ([subString isEqualToString:@"#define"]) {
+                    subString = [lineStr stringByReplacingOccurrencesOfString:@"#define" withString:@""];
+                    NSArray *arr = subString.componentsBySetString(@" ");
+                    if (arr && arr.count >= 2) {
+                        subString = arr[0];
+                        if (subString.length > 0) {
+                            subString = [subString substringToIndex:1];
+                            if (subString && ![subString isEqualToString:@"K"]) {
+                                [mutableArr addObject:lineStr];
+                            }
+                        }
+                    }
+                }
+            }
+        }];
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
+
 @end
 

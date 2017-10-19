@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "QFScanProj.h"
 
+#define KSFS  @"1111"
+#define WER  @"2222"
+
 @interface ViewController ()
 @property  BOOL yn0;
 @property (nonatomic) BOOL yn1;
@@ -35,10 +38,17 @@
 //        NSLog(@"%@", allProperty);
 //    }];
 
-    [QFScanProj scanFileType:string finish:^(NSArray *allFileType) {
-        NSLog(@"%@", allFileType);
-    }];
+//    [QFScanProj scanFileType:string finish:^(NSArray *allFileType) {
+//        NSLog(@"%@", allFileType);
+//    }];
     
+//    [QFScanProj scanDefine:string finish:^(NSArray *scanDefine) {
+//        NSLog(@"%@", scanDefine);
+//    }];
+    
+    [QFScanProj scanEnum:string finish:^(NSArray *allEnum) {
+        NSLog(@"%@", allEnum);
+    }];
 }
 
 @end
