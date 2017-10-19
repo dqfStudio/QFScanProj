@@ -46,9 +46,18 @@
 //        NSLog(@"%@", scanDefine);
 //    }];
     
-    [QFScanProj scanEnum:string finish:^(NSArray *allEnum) {
-        NSLog(@"%@", allEnum);
+    [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0];
+    
+//    [QFScanProj scanEnum:string finish:^(NSArray *allEnum) {
+//        NSLog(@"%@", allEnum);
+//    }];
+    
+    [QFScanProj scanColorDefine:string finish:^(NSArray *allColorDefine) {
+        NSLog(@"%@", allColorDefine);
     }];
+
+    
+//    + (void)scanColorDefine:(NSString *)path finish:(void(^)(NSArray *allColorDefine))callback
 }
 
 @end

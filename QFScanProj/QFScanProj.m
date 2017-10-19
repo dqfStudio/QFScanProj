@@ -518,5 +518,23 @@
     }
 }
 
++ (void)scanColorDefine:(NSString *)path finish:(void(^)(NSArray *allColorDefine))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
+        [QFFileHelper file:path block:^(NSString *lineStr) {
+            if (lineStr) {
+                if ([lineStr containsString:@"colorWithRed:"] && [lineStr containsString:@"green:"] && [lineStr containsString:@"blue:"] && [lineStr containsString:@"alpha:"]) {
+                    [mutableArr addObject:lineStr];
+                }else if ([lineStr containsString:@"initWithRed:"] && [lineStr containsString:@"green:"] && [lineStr containsString:@"blue:"] && [lineStr containsString:@"alpha:"]) {
+                    [mutableArr addObject:lineStr];
+                }
+            }
+        }];
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
+
 @end
 

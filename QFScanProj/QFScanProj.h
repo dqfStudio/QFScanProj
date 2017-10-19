@@ -72,6 +72,7 @@
 //扫描宏定义是否合规
 + (void)scanDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback;
 //扫描颜色设置是否使用了统一的方法
++ (void)scanColorDefine:(NSString *)path finish:(void(^)(NSArray *allColorDefine))callback;
 //扫描跳转是否使用了统一的方法
 //扫描是否使用了私有函数
 //扫描所有网络接口是否有保留字段
