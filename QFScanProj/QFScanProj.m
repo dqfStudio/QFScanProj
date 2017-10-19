@@ -7,10 +7,21 @@
 //
 
 #import "QFScanProj.h"
-#import "QFFilter.h"
-#import "QFCheckFunc.h"
 
 @implementation QFScanProj
+
++ (void)scanFileType:(NSString *)path finish:(void(^)(NSArray *allFileType))callback {
+    NSMutableArray *mutableArr = [NSMutableArray new];
+    [QFFileHelper folderPath2:path block:^(NSString *fileName) {
+        NSString *string = [fileName pathExtension];
+        if (string.length > 0 && ![mutableArr containsObject:[fileName pathExtension]]) {
+            [mutableArr addObject:[fileName pathExtension]];
+        }
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
 
 + (void)scanFunc:(NSString *)path finish:(void(^)(NSArray *allFunc))callback {
     NSMutableArray *mutableArr = [NSMutableArray new];
@@ -402,6 +413,43 @@
     }];
     if (callback) {
         callback(mutableArr);
+    }
+}
+
++ (void)scanIllegalProperty:(NSString *)path finish:(void(^)(NSArray *allProperty))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
+        [QFFileHelper file:path block:^(NSString *lineStr) {
+            if (lineStr) {
+                BOOL contain = [[QFCheckProperty share] containsProperty:lineStr];
+                if (contain) {
+                    if (![[QFCheckProperty share] matchingProperty:lineStr allType:NO]) {
+                        [mutableArr addObject:[lineStr mutableCopy]];
+                    }
+                }
+            }
+        }];
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
++ (void)checkContainsNonatomic:(NSString *)lineStr finish:(void(^)(BOOL contains))callback {
+    BOOL nonatomic = [[QFCheckProperty share] containsNonatomic:lineStr];
+    if (callback) {
+        callback(nonatomic);
+    }
+}
++ (void)checkPropertyType:(NSString *)lineStr finish:(void(^)(NSPropertyType type))callback {
+    NSPropertyType type = [[QFCheckProperty share] checkPropertyType:lineStr];
+    if (callback) {
+        callback(type);
+    }
+}
++ (void)checkProperty:(NSString *)lineStr finish:(void(^)(NSString *property))callback {
+    NSString *property = [[QFCheckProperty share] checkProperty:lineStr];
+    if (callback) {
+        callback(property);
     }
 }
 

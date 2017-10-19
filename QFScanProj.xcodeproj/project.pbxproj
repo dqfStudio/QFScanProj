@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		150351DC1F96D50F0090E86C /* QFFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 150351DB1F96D50F0090E86C /* QFFilter.m */; };
+		150352391F982AB10090E86C /* QFCheckProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 150352381F982AB10090E86C /* QFCheckProperty.m */; };
+		1503523C1F982DE20090E86C /* NSString+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1503523A1F982DE20090E86C /* NSString+QFUtil.m */; };
 		153B34BB1F958E950025267E /* QFCheckFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 153B34BA1F958E950025267E /* QFCheckFunc.m */; };
 		15FB4CE91F5FDA8D008638D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CE81F5FDA8D008638D5 /* main.m */; };
 		15FB4CEC1F5FDA8D008638D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CEB1F5FDA8D008638D5 /* AppDelegate.m */; };
@@ -19,12 +21,15 @@
 		15FB4D341F5FDB23008638D5 /* QFScanProj.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4D331F5FDB23008638D5 /* QFScanProj.m */; };
 		15FB4D3C1F5FDB78008638D5 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4D371F5FDB78008638D5 /* NSArray+Extension.m */; };
 		15FB4D3D1F5FDB78008638D5 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4D391F5FDB78008638D5 /* NSDictionary+Extension.m */; };
-		15FB4D3E1F5FDB78008638D5 /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4D3B1F5FDB78008638D5 /* NSStringUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		150351DA1F96D50F0090E86C /* QFFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFFilter.h; sourceTree = "<group>"; };
 		150351DB1F96D50F0090E86C /* QFFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFFilter.m; sourceTree = "<group>"; };
+		150352371F982AB10090E86C /* QFCheckProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFCheckProperty.h; sourceTree = "<group>"; };
+		150352381F982AB10090E86C /* QFCheckProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFCheckProperty.m; sourceTree = "<group>"; };
+		1503523A1F982DE20090E86C /* NSString+QFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QFUtil.m"; sourceTree = "<group>"; };
+		1503523B1F982DE20090E86C /* NSString+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QFUtil.h"; sourceTree = "<group>"; };
 		153B34B91F958E940025267E /* QFCheckFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCheckFunc.h; sourceTree = "<group>"; };
 		153B34BA1F958E950025267E /* QFCheckFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCheckFunc.m; sourceTree = "<group>"; };
 		15FB4CE41F5FDA8D008638D5 /* QFScanProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QFScanProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,8 +50,6 @@
 		15FB4D371F5FDB78008638D5 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		15FB4D381F5FDB78008638D5 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		15FB4D391F5FDB78008638D5 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
-		15FB4D3A1F5FDB78008638D5 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringUtil.h; sourceTree = "<group>"; };
-		15FB4D3B1F5FDB78008638D5 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				150351DB1F96D50F0090E86C /* QFFilter.m */,
 				153B34B91F958E940025267E /* QFCheckFunc.h */,
 				153B34BA1F958E950025267E /* QFCheckFunc.m */,
+				150352371F982AB10090E86C /* QFCheckProperty.h */,
+				150352381F982AB10090E86C /* QFCheckProperty.m */,
 				15FB4CF01F5FDA8D008638D5 /* Main.storyboard */,
 				15FB4CF31F5FDA8D008638D5 /* Assets.xcassets */,
 				15FB4CF51F5FDA8D008638D5 /* LaunchScreen.storyboard */,
@@ -113,6 +118,8 @@
 				15FB4D351F5FDB78008638D5 /* Extension */,
 				15FB4D2F1F5FDAFF008638D5 /* QFFileHelper.h */,
 				15FB4D301F5FDAFF008638D5 /* QFFileHelper.m */,
+				1503523B1F982DE20090E86C /* NSString+QFUtil.h */,
+				1503523A1F982DE20090E86C /* NSString+QFUtil.m */,
 			);
 			path = QFFileHelper;
 			sourceTree = "<group>";
@@ -124,8 +131,6 @@
 				15FB4D371F5FDB78008638D5 /* NSArray+Extension.m */,
 				15FB4D381F5FDB78008638D5 /* NSDictionary+Extension.h */,
 				15FB4D391F5FDB78008638D5 /* NSDictionary+Extension.m */,
-				15FB4D3A1F5FDB78008638D5 /* NSStringUtil.h */,
-				15FB4D3B1F5FDB78008638D5 /* NSStringUtil.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -209,9 +214,10 @@
 				15FB4CEF1F5FDA8D008638D5 /* ViewController.m in Sources */,
 				15FB4D3D1F5FDB78008638D5 /* NSDictionary+Extension.m in Sources */,
 				15FB4CEC1F5FDA8D008638D5 /* AppDelegate.m in Sources */,
+				150352391F982AB10090E86C /* QFCheckProperty.m in Sources */,
+				1503523C1F982DE20090E86C /* NSString+QFUtil.m in Sources */,
 				15FB4CE91F5FDA8D008638D5 /* main.m in Sources */,
 				150351DC1F96D50F0090E86C /* QFFilter.m in Sources */,
-				15FB4D3E1F5FDB78008638D5 /* NSStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

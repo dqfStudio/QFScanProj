@@ -6,7 +6,7 @@
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import "NSStringUtil.h"
+#import "NSString+QFUtil.h"
 
 @interface QFFileHelper : NSObject
 

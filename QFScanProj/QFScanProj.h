@@ -7,10 +7,15 @@
 //
 
 #import "QFFileHelper.h"
+#import "QFFilter.h"
+#import "QFCheckFunc.h"
+#import "QFCheckProperty.h"
 
 #define KFolderPath @"/Users/issuser/Desktop/WorkPlace/Test-MiguMusic-iOS/MGMobileMusic"
 
 @interface QFScanProj : NSObject
+
++ (void)scanFileType:(NSString *)path finish:(void(^)(NSArray *allFileType))callback;
 
 + (void)scanFunc:(NSString *)path finish:(void(^)(NSArray *allFunc))callback;
 
@@ -55,6 +60,20 @@
 + (void)scanMP4:(NSString *)path finish:(void(^)(NSArray *allMP4))callback;
 + (void)scanWov:(NSString *)path finish:(void(^)(NSArray *allWov))callback;
 + (void)scanFlv:(NSString *)path finish:(void(^)(NSArray *allFlv))callback;
+
+//扫描类属性定义是否合法
++ (void)scanIllegalProperty:(NSString *)path finish:(void(^)(NSArray *allProperty))callback;
++ (void)checkContainsNonatomic:(NSString *)lineStr finish:(void(^)(BOOL contains))callback;
++ (void)checkPropertyType:(NSString *)lineStr finish:(void(^)(NSPropertyType type))callback;
++ (void)checkProperty:(NSString *)lineStr finish:(void(^)(NSString *property))callback;
+//扫描枚举定义是否合规
+//扫描block的使用是否合规
+//扫描宏定义是否合规
+//扫描颜色设置是否使用了统一的方法
+//扫描跳转是否使用了统一的方法
+//扫描是否使用了私有函数
+//扫描所有网络接口是否有保留字段
+//扫描是否使用了QFSafeUtil
 
 @end
 
