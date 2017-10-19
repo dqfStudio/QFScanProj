@@ -70,7 +70,7 @@
 + (void)scanEnum:(NSString *)path finish:(void(^)(NSArray *allEnum))callback;
 //扫描block的使用是否合规
 //扫描宏定义是否合规
-+ (void)scanDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback;
++ (void)scanMacroDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback;
 //扫描颜色设置是否使用了统一的方法
 + (void)scanColorDefine:(NSString *)path finish:(void(^)(NSArray *allColorDefine))callback;
 //扫描跳转是否使用了统一的方法

@@ -489,7 +489,7 @@
     }
 }
 
-+ (void)scanDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback {
++ (void)scanMacroDefine:(NSString *)path finish:(void(^)(NSArray *allDefine))callback {
     NSMutableArray *mutableArr = [NSMutableArray array];
     [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
         [QFFileHelper file:path block:^(NSString *lineStr) {
