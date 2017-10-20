@@ -25,7 +25,9 @@
 
 + (void)scanFunc:(NSString *)path finish:(void(^)(NSArray *allFunc))callback {
     NSMutableArray *mutableArr = [NSMutableArray new];
-    [QFFileHelper folderPath1:path filterArr:[[QFFilter share] sourceMFilter] block:^(NSString *path) {
+    NSMutableArray *func = [NSMutableArray new];
+    [func addObjectsFromArray:[[QFFilter share] sourceMFilter]];
+    [QFFileHelper folderPath1:path filterArr:func block:^(NSString *path) {
         NSArray *arr = [[QFCheckFunc share] checkFunc:path];
         if (arr && arr.count > 0) {
             [mutableArr addObjectsFromArray:arr];
@@ -421,8 +423,7 @@
     [QFFileHelper folderPath1:path filterArr:@[@".h", @".m"] block:^(NSString *path) {
         [QFFileHelper file:path block:^(NSString *lineStr) {
             if (lineStr) {
-                BOOL contain = [[QFCheckProperty share] containsProperty:lineStr];
-                if (contain) {
+                if ([[QFCheckProperty share] containsProperty:lineStr]) {
                     if (![[QFCheckProperty share] matchingProperty:lineStr allType:NO]) {
                         [mutableArr addObject:[lineStr mutableCopy]];
                     }
@@ -533,6 +534,27 @@
     }];
     if (callback) {
         callback(mutableArr);
+    }
+}
+
++ (void)scanNetInterface:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allNetInterface))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    NSMutableArray *allIllegalNet = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filterArr:filterArr block:^(NSString *path) {
+        NSArray *arr = [[QFCheckFunc share] checkFunc:path];
+        if (arr && arr.count > 0) {
+            [mutableArr addObjectsFromArray:arr];
+        }
+    }];
+    for (NSString *func in mutableArr) {
+        NSString *subFunc = [func stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if (![subFunc containsString:@"userInfo:(NSDictionary*)userInfo"]) {
+            [allIllegalNet addObject:[func mutableCopy]];
+        }
+    }
+    if (callback) {
+        if (mutableArr.count > 0) [mutableArr removeAllObjects];
+        callback(allIllegalNet);
     }
 }
 

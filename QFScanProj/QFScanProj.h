@@ -76,6 +76,7 @@
 //扫描跳转是否使用了统一的方法
 //扫描是否使用了私有函数
 //扫描所有网络接口是否有保留字段
++ (void)scanNetInterface:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allNetInterface))callback;
 //扫描是否使用了QFSafeUtil
 
 @end

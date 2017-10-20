@@ -126,10 +126,7 @@
     //此方法逻辑还不完善
     NSString *propertyString = [self checkProperty:aString];
     NSPropertyType type = [self checkPropertyType:aString];
-    if (!yn) {
-        if (type == NSPropertyTypeUnknow) return YES;
-    }
-    
+    if (!yn && type == NSPropertyTypeUnknow) return YES;
     
     if ([aString containsString:@"*"] || [propertyString isEqualToString:@"id"]) {
         if (type != NSPropertyTypeAssign) return YES;
@@ -140,20 +137,6 @@
             if (type == NSPropertyTypeAssign || type == NSPropertyTypeCopy) return YES;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-//    if ([aString containsString:@"<"] && [aString containsString:@">"]) {
-//        if (type == NSPropertyTypeWeak || type == NSPropertyTypeStrong || type == NSPropertyTypeRetain || type == NSPropertyTypeCopy) return YES;
-//        return NO;
-//    }else {
-//
-//    }
     return NO;
 }
 

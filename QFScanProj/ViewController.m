@@ -52,12 +52,56 @@
 //        NSLog(@"%@", allEnum);
 //    }];
     
-    [QFScanProj scanColorDefine:string finish:^(NSArray *allColorDefine) {
-        NSLog(@"%@", allColorDefine);
-    }];
+//    [QFScanProj scanColorDefine:string finish:^(NSArray *allColorDefine) {
+//        NSLog(@"%@", allColorDefine);
+//    }];
 
+//    NSString *ffff = @"/Users/issuser/Desktop/WorkPlace/MiguMusic-iOS/MGMobileMusic/Classes/Sevice/Biz/MGContentBiz.m";
+    [QFScanProj scanNetInterface:string filterArr:@[@"MGContentBiz.m"] finish:^(NSArray *allNetInterface) {
+        NSLog(@"%@", allNetInterface);
+    }];
     
-//    + (void)scanColorDefine:(NSString *)path finish:(void(^)(NSArray *allColorDefine))callback
+//    + (void)scanNetInterface:(NSString *)path finish:(void(^)(NSArray *allNetInterface))callback;
+//    [self getResourcesWithCopyrightId:nil needSimple:0 logID:nil successBlock:^NSString *{
+//        return @"";
+//    }];
 }
+
+- (void)getResourcesWithCopyrightId:(NSString *)copyrightId
+                         needSimple:(BOOL)needSimple
+                              userInfo:(NSDictionary *)userInfo
+                       successBlock:(NSString *(^)(void))successBlock {
+    if (successBlock) {
+        NSString *str = successBlock();
+    }
+//    MGContentResourceInfoNet *resourceInfoNet = [[MGContentResourceInfoNet alloc] init];
+//    resourceInfoNet.copyrightId = copyrightId;
+//    resourceInfoNet.resourceType = resourceType;
+//    resourceInfoNet.needSimple = NSStringFromType(needSimple);
+//    if ([logID isKindOfClass:[NSString class]]) {
+//        [resourceInfoNet.headers setObject:logID forKey:@"logId"];
+//    }
+//    CALLBACK(resourceInfoNet);
+//    [resourceInfoNet startRequest];
+}
+
+- (void)ss:(NSString *)idStr getResourcesWithCopyrightId:(NSString *)copyrightId
+                         needSimple:(BOOL)needSimple
+                           userInfo:(NSDictionary *)userInfo
+                       successBlock:(NSString *(^)(void))successBlock {
+    if (successBlock) {
+        NSString *str = successBlock();
+    }
+    //    MGContentResourceInfoNet *resourceInfoNet = [[MGContentResourceInfoNet alloc] init];
+    //    resourceInfoNet.copyrightId = copyrightId;
+    //    resourceInfoNet.resourceType = resourceType;
+    //    resourceInfoNet.needSimple = NSStringFromType(needSimple);
+    //    if ([logID isKindOfClass:[NSString class]]) {
+    //        [resourceInfoNet.headers setObject:logID forKey:@"logId"];
+    //    }
+    //    CALLBACK(resourceInfoNet);
+    //    [resourceInfoNet startRequest];
+}
+
 
 @end
