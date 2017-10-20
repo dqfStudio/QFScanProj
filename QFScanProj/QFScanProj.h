@@ -78,6 +78,8 @@
 //扫描所有网络接口是否有保留字段
 + (void)scanNetInterface:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allNetInterface))callback;
 //扫描是否使用了QFSafeUtil
+//扫描符合特定要求的文件，如扫描xxx写过哪些文件
++ (void)scanfile:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allFile))callback;
 
 @end
 

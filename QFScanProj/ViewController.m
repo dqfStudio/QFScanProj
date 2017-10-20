@@ -57,51 +57,15 @@
 //    }];
 
 //    NSString *ffff = @"/Users/issuser/Desktop/WorkPlace/MiguMusic-iOS/MGMobileMusic/Classes/Sevice/Biz/MGContentBiz.m";
-    [QFScanProj scanNetInterface:string filterArr:@[@"MGContentBiz.m"] finish:^(NSArray *allNetInterface) {
-        NSLog(@"%@", allNetInterface);
+//    [QFScanProj scanNetInterface:string filterArr:@[@"MGContentBiz.m"] finish:^(NSArray *allNetInterface) {
+//        NSLog(@"%@", allNetInterface);
+//    }];
+    
+    [QFScanProj scanfile:string filterArr:@[@"//  Created by dqf on"] finish:^(NSArray *allFile) {
+        NSLog(@"%@", allFile);
     }];
     
-//    + (void)scanNetInterface:(NSString *)path finish:(void(^)(NSArray *allNetInterface))callback;
-//    [self getResourcesWithCopyrightId:nil needSimple:0 logID:nil successBlock:^NSString *{
-//        return @"";
-//    }];
+//+ (void)scanfile:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allFile))callback
 }
-
-- (void)getResourcesWithCopyrightId:(NSString *)copyrightId
-                         needSimple:(BOOL)needSimple
-                              userInfo:(NSDictionary *)userInfo
-                       successBlock:(NSString *(^)(void))successBlock {
-    if (successBlock) {
-        NSString *str = successBlock();
-    }
-//    MGContentResourceInfoNet *resourceInfoNet = [[MGContentResourceInfoNet alloc] init];
-//    resourceInfoNet.copyrightId = copyrightId;
-//    resourceInfoNet.resourceType = resourceType;
-//    resourceInfoNet.needSimple = NSStringFromType(needSimple);
-//    if ([logID isKindOfClass:[NSString class]]) {
-//        [resourceInfoNet.headers setObject:logID forKey:@"logId"];
-//    }
-//    CALLBACK(resourceInfoNet);
-//    [resourceInfoNet startRequest];
-}
-
-- (void)ss:(NSString *)idStr getResourcesWithCopyrightId:(NSString *)copyrightId
-                         needSimple:(BOOL)needSimple
-                           userInfo:(NSDictionary *)userInfo
-                       successBlock:(NSString *(^)(void))successBlock {
-    if (successBlock) {
-        NSString *str = successBlock();
-    }
-    //    MGContentResourceInfoNet *resourceInfoNet = [[MGContentResourceInfoNet alloc] init];
-    //    resourceInfoNet.copyrightId = copyrightId;
-    //    resourceInfoNet.resourceType = resourceType;
-    //    resourceInfoNet.needSimple = NSStringFromType(needSimple);
-    //    if ([logID isKindOfClass:[NSString class]]) {
-    //        [resourceInfoNet.headers setObject:logID forKey:@"logId"];
-    //    }
-    //    CALLBACK(resourceInfoNet);
-    //    [resourceInfoNet startRequest];
-}
-
 
 @end

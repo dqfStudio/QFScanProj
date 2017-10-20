@@ -558,5 +558,24 @@
     }
 }
 
++ (void)scanfile:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allFile))callback {
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    [QFFileHelper folderPath1:path filter:@".h" block:^(NSString *path) {
+        BOOL contains = YES;
+        NSString *contentStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        if (!filterArr || filterArr.count <= 0) return;
+        for (int i=0; i<filterArr.count; i++) {
+            NSString *filter = filterArr[i];
+            if (![contentStr containsString:filter]) {
+                contains = NO;
+            }
+        }
+        if (contains) [mutableArr addObject:[path lastPathComponent]];
+    }];
+    if (callback) {
+        callback(mutableArr);
+    }
+}
+
 @end
 
