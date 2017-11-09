@@ -577,5 +577,12 @@
     }
 }
 
++ (void)scanProj:(NSUserDefaults *)defatluts finish:(void(^)(NSDictionary *allUserDefaults))callback {
+    NSDictionary *dictionary = [defatluts dictionaryRepresentation];
+    if (callback) {
+        callback(dictionary);
+    }
+}
+
 @end
 

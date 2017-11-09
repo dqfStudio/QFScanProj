@@ -80,6 +80,8 @@
 //扫描是否使用了QFSafeUtil
 //扫描符合特定要求的文件，如扫描xxx写过哪些文件
 + (void)scanfile:(NSString *)path filterArr:(NSArray *)filterArr finish:(void(^)(NSArray *allFile))callback;
+//扫描工程中所有的用户设置NSUserDefaults
++ (void)scanProj:(NSUserDefaults *)defatluts finish:(void(^)(NSDictionary *allUserDefaults))callback;
 
 @end
 

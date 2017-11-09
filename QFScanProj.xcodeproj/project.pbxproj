@@ -11,6 +11,7 @@
 		150352391F982AB10090E86C /* QFCheckProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 150352381F982AB10090E86C /* QFCheckProperty.m */; };
 		1503523C1F982DE20090E86C /* NSString+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1503523A1F982DE20090E86C /* NSString+QFUtil.m */; };
 		153B34BB1F958E950025267E /* QFCheckFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 153B34BA1F958E950025267E /* QFCheckFunc.m */; };
+		15CD52251F9DCE5400AE6D73 /* uniaccess.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15CD52241F9DCE5400AE6D73 /* uniaccess.jpg */; };
 		15FB4CE91F5FDA8D008638D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CE81F5FDA8D008638D5 /* main.m */; };
 		15FB4CEC1F5FDA8D008638D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CEB1F5FDA8D008638D5 /* AppDelegate.m */; };
 		15FB4CEF1F5FDA8D008638D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB4CEE1F5FDA8D008638D5 /* ViewController.m */; };
@@ -32,6 +33,7 @@
 		1503523B1F982DE20090E86C /* NSString+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QFUtil.h"; sourceTree = "<group>"; };
 		153B34B91F958E940025267E /* QFCheckFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCheckFunc.h; sourceTree = "<group>"; };
 		153B34BA1F958E950025267E /* QFCheckFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCheckFunc.m; sourceTree = "<group>"; };
+		15CD52241F9DCE5400AE6D73 /* uniaccess.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uniaccess.jpg; sourceTree = "<group>"; };
 		15FB4CE41F5FDA8D008638D5 /* QFScanProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QFScanProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FB4CE81F5FDA8D008638D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		15FB4CEA1F5FDA8D008638D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				15FB4CEB1F5FDA8D008638D5 /* AppDelegate.m */,
 				15FB4CED1F5FDA8D008638D5 /* ViewController.h */,
 				15FB4CEE1F5FDA8D008638D5 /* ViewController.m */,
+				15CD52241F9DCE5400AE6D73 /* uniaccess.jpg */,
 				15FB4D321F5FDB23008638D5 /* QFScanProj.h */,
 				15FB4D331F5FDB23008638D5 /* QFScanProj.m */,
 				150351DA1F96D50F0090E86C /* QFFilter.h */,
@@ -196,6 +199,7 @@
 			files = (
 				15FB4CF71F5FDA8D008638D5 /* LaunchScreen.storyboard in Resources */,
 				15FB4CF41F5FDA8D008638D5 /* Assets.xcassets in Resources */,
+				15CD52251F9DCE5400AE6D73 /* uniaccess.jpg in Resources */,
 				15FB4CF21F5FDA8D008638D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
